@@ -309,7 +309,7 @@ class nn:
         plt.pause(1e-12)
         plt.clf()
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
     # XOR
 
     # net  = nn([2, 3, 2], ['sigmoid', 'softmax'], 'CrossEntropyLoss')
@@ -351,34 +351,4 @@ if __name__ == '__main__':
     #         # net.viz(rows=2, cols=2)
 
     #     print(f'epoch: {e}, loss: {Loss/iterations}')
-
-
-
-    # SPIRAL
-
-    from sklearn import datasets
-
-    x, y = datasets.make_moons(n_samples=1000, noise=0.1, random_state=0)
-
-    net  = nn([2, 5, 5, 3, 2], ['relu', 'relu', 'relu', 'softmax'], 'CrossEntropyLoss', inp=x, target=y)
-    net.load()
-
-    bs = 10
-    lr = 1e-2
-    iterations = len(y) // bs
-
-    for e in range(5000):
-        Loss = 0    
-        for i in range(iterations):
-            start = i * bs
-            net.zero_grad()
-            out, loss = net(x[start: start+bs], y[start: start+bs])
-            Loss += loss
-            net.optimize(lr, lmda=0.0)
-        if e%20 == 0:
-            net.viz(epoch=e, loss=Loss/iterations)
-            net.save()
-            # net.viz(rows=2, cols=2)
-
-        print(f'epoch: {e}, loss: {Loss/iterations}')
 
