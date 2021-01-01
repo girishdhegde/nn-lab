@@ -32,11 +32,14 @@ Implementation of general neural network from scratch in pure python and numpy. 
 ### Running the code:
 
 1. XOR data fitting and visualization:
+        
         python xor.py
 2.  Spiral data fitting and visualization
         python spiral.py
 3.  To build custom network
+        
         import nn.nn as nn
+    
     And refer **XOR.py**
     
 ## Sample Visualizations:
