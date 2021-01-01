@@ -309,76 +309,76 @@ class nn:
         plt.pause(1e-12)
         plt.clf()
 
+if __name__ == '__main__':
+    # XOR
 
-# XOR
+    # net  = nn([2, 3, 2], ['sigmoid', 'softmax'], 'CrossEntropyLoss')
 
-# net  = nn([2, 3, 2], ['sigmoid', 'softmax'], 'CrossEntropyLoss')
+    # x  = np.linspace(-40, 40, 40)
+    # y  = np.linspace(-40, 40, 40)
+    # x  = np.column_stack([[xi, yi] for xi in x for yi in y])
+    # x  = np.array(list(zip(x[0], x[1])))
 
-# x  = np.linspace(-40, 40, 40)
-# y  = np.linspace(-40, 40, 40)
-# x  = np.column_stack([[xi, yi] for xi in x for yi in y])
-# x  = np.array(list(zip(x[0], x[1])))
-
-# y  = []
-# for X in x:
-#     xi, yi = X
-#     if (xi > 0 and yi > 0) or (xi < 0 and yi <0):
-#         y.append(1)
-#     else:
-#         y.append(0)
-# y = np.array(y)
-
-
-# index = np.arange(len(y))
-# np.random.shuffle(index)
-# x = x[index]
-# y = y[index]
-
-# bs = 10
-# lr = 1e-3
-# iterations = len(y) // bs
-
-# for e in range(10000):
-#     Loss = 0
-#     for i in range(iterations):
-#         start = i * bs
-#         net.zero_grad()
-#         out, loss = net(x[start: start+bs], y[start: start+bs])
-#         Loss += loss
-#         net.optimize(lr, lmda=0.0)
-#     if e%5 == 0:
-#         net.viz(epoch=e, loss=Loss/iterations)
-#         # net.viz(rows=2, cols=2)
-
-#     print(f'epoch: {e}, loss: {Loss/iterations}')
+    # y  = []
+    # for X in x:
+    #     xi, yi = X
+    #     if (xi > 0 and yi > 0) or (xi < 0 and yi <0):
+    #         y.append(1)
+    #     else:
+    #         y.append(0)
+    # y = np.array(y)
 
 
+    # index = np.arange(len(y))
+    # np.random.shuffle(index)
+    # x = x[index]
+    # y = y[index]
 
-# SPIRAL
+    # bs = 10
+    # lr = 1e-3
+    # iterations = len(y) // bs
 
-from sklearn import datasets
+    # for e in range(10000):
+    #     Loss = 0
+    #     for i in range(iterations):
+    #         start = i * bs
+    #         net.zero_grad()
+    #         out, loss = net(x[start: start+bs], y[start: start+bs])
+    #         Loss += loss
+    #         net.optimize(lr, lmda=0.0)
+    #     if e%5 == 0:
+    #         net.viz(epoch=e, loss=Loss/iterations)
+    #         # net.viz(rows=2, cols=2)
 
-x, y = datasets.make_moons(n_samples=1000, noise=0.1, random_state=0)
+    #     print(f'epoch: {e}, loss: {Loss/iterations}')
 
-net  = nn([2, 5, 5, 3, 2], ['relu', 'relu', 'relu', 'softmax'], 'CrossEntropyLoss', inp=x, target=y)
-net.load()
 
-bs = 10
-lr = 1e-2
-iterations = len(y) // bs
 
-for e in range(5000):
-    Loss = 0    
-    for i in range(iterations):
-        start = i * bs
-        net.zero_grad()
-        out, loss = net(x[start: start+bs], y[start: start+bs])
-        Loss += loss
-        net.optimize(lr, lmda=0.0)
-    if e%20 == 0:
-        net.viz(epoch=e, loss=Loss/iterations)
-        net.save()
-        # net.viz(rows=2, cols=2)
+    # SPIRAL
 
-    print(f'epoch: {e}, loss: {Loss/iterations}')
+    from sklearn import datasets
+
+    x, y = datasets.make_moons(n_samples=1000, noise=0.1, random_state=0)
+
+    net  = nn([2, 5, 5, 3, 2], ['relu', 'relu', 'relu', 'softmax'], 'CrossEntropyLoss', inp=x, target=y)
+    net.load()
+
+    bs = 10
+    lr = 1e-2
+    iterations = len(y) // bs
+
+    for e in range(5000):
+        Loss = 0    
+        for i in range(iterations):
+            start = i * bs
+            net.zero_grad()
+            out, loss = net(x[start: start+bs], y[start: start+bs])
+            Loss += loss
+            net.optimize(lr, lmda=0.0)
+        if e%20 == 0:
+            net.viz(epoch=e, loss=Loss/iterations)
+            net.save()
+            # net.viz(rows=2, cols=2)
+
+        print(f'epoch: {e}, loss: {Loss/iterations}')
 
