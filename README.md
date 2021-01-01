@@ -1,7 +1,12 @@
 # nn-lab
 ***
-Implementation of general neural network from scratch in pure python and numpy. Neural Networks are very powerfull tools of machine learning which can be used mainly for various **Prediction, Classification, Generative** applications. The Neural Networks are **Universal Function Approximators**. They can be visualized as **Multiple Logistic Regression Units Drawing Decision Boundaries In Hyper Space** or **Spatial Tranformations i.e. Representaions of Data Various Waays in Hyper Space** or as **Probability Ditribution Approximators**.
+Neural Networks are very powerfull tools of machine learning which can be used mainly for various **Prediction, Classification, Generative** applications. 
 
+The Neural Networks are **Universal Function Approximators**. 
+
+They can be visualized as **Multiple Logistic Regression Units Drawing Decision Boundaries In Hyper Space** or **Spatial Tranformations i.e. Representaions of Data Various Waays in Hyper Space** or as **Probability Ditribution Approximators**.
+ 
+ This repo. contains implementation of general neural network from scratch in pure python and numpy.
 ***
 ## Features:
 ***
@@ -27,7 +32,7 @@ Implementation of general neural network from scratch in pure python and numpy. 
 ### Requirements:
 1.  numpy
 2.  matplotlib(For visualization if required)
-3.  sklearn(optional required only to generate spiral data for testing)
+3.  sklearn(optional required only to generate spiral data for in spiral.py)
 
 ### Running the code:
 
@@ -44,3 +49,6 @@ Implementation of general neural network from scratch in pure python and numpy. 
     
 ## Sample Visualizations:
 To be added
+
+## To Do:
+Optimizers are implemented as member functions of **nn** class. In future **Optimizers** should be implemented as seperate class which takes **nn parameters** as inputs.
