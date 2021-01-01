@@ -44,8 +44,23 @@ They can be visualized as **Multiple Logistic Regression Units Drawing Decision 
 3.  To build custom network
         
         import nn.nn as nn
+        
+   Define neural network as:
+   
+       net = nn(shape=[in_features, hidden1, hidden2, ..., hiddenN, out_layer],
+                activations=[act_fn for all hidden layers and output layer], viz=False)
+  
+  Training Loop:
+  
+      # input and targets should be of shape (Batch_size, n)
+      for each epoch:
+          for each iteration:
+              net.zero_grad()
+              output, loss = net(input_batch, target_batch)
+          net.adam(lr=learning_rate)
+
     
-    And refer **XOR.py**
+    For more refer **XOR.py**
     
 ## Sample Visualizations:
 To be added
