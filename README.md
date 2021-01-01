@@ -23,7 +23,21 @@ Implementation of general neural network from scratch in pure python and numpy. 
     
  
 ## Here's How To Run The Code:
-To be updated soon
+***
+### Requirements:
+1.  numpy
+2.  matplotlib(For visualization if required)
+3.  sklearn(optional required only to generate spiral data for testing)
 
+### Running the code:
+
+1. XOR data fitting and visualization:
+        python xor.py
+2.  Spiral data fitting and visualization
+        python spiral.py
+3.  To build custom network
+        import nn.nn as nn
+    And refer **XOR.py**
+    
 ## Sample Visualizations:
 To be added
