@@ -27,7 +27,7 @@ They can be visualized as **Multiple Logistic Regression Units Drawing Decision 
     *  **Decision Boundary**
     
  
-## Here's How To Run The Code:
+## Usage
 ***
 ### Requirements:
 1.  numpy
